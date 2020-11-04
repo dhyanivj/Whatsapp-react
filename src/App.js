@@ -17,7 +17,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Todo App</h1>
+      <h1>Just another Todo App</h1>
       <form>
         <input
           value={input}

@@ -9,7 +9,7 @@
 .btn{
 background-color: #6c5ce7;
 color:white;
-border:2px solid black;
+border: px solid black;
 margin: 5px;
 padding: 5px 20px;
 cursor: pointer;
@@ -20,5 +20,8 @@ transition: 0.5s;
   background-color: #201a52;
 }
 .input{
-  padding: 5px 5px;
+  padding: 5px 10px;
+  border-radius: 50px;
+  outline:none;
+  border:1px solid black;
 }
