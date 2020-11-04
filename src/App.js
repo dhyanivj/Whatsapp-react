@@ -1,19 +1,32 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import "./style.css";
 
 export default function App() {
-  const [todos, setTodos] = useState(['take a mango','go to the school']);
-  
+  const [todo, setTodos] = useState([
+    "this ",
+    "take a mango",
+    "go to the school"
+  ]);
+  const [input, setInput] = useState("");
+
+  const addTodo = event => {
+    event.preventDefault(); //stop refeshing page
+    setTodos([...todo, input]); //add todo tat last 
+    setInput('');  //blank input field
+  };
+
   return (
     <div className="App">
-    <h1>cleaver progammer</h1>
-    <input/>
-    <button>Add todo </button>
-<ul>
-<li>
-</li>
-</ul>
-
+      <h1>Todo App</h1>
+      <form>
+      <input value={input} onChange={event => setInput(event.target.value)} />
+      <button type="submit" onClick={addTodo}>Add todo </button>
+      </form>
+      <ul>
+        {todo.map(todo => (
+          <li>{todo}</li>
+        ))}
+      </ul>
     </div>
   );
 }
