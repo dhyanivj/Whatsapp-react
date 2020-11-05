@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./style.css";
+import Todo from "./Todo";
 
 export default function App() {
   const [todo, setTodos] = useState([
@@ -25,13 +26,18 @@ export default function App() {
           className="input"
         />
 
-        <button type="submit" onClick={addTodo} className="btn">
+        <button
+          disabled={!input}
+          type="submit"
+          onClick={addTodo}
+          className="btn"
+        >
           Add todo{" "}
         </button>
       </form>
       <ul>
         {todo.map(todo => (
-          <li>{todo}</li>
+          <Todo text={todo} />
         ))}
       </ul>
     </div>
